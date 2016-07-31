@@ -25,6 +25,9 @@ $(document).ready(function(){
       selectedAccessoryPath = accessorySelectBox.options[accessorySelectBox.selectedIndex].value;
       if (accessoryCreated == 0) {
         accessory.src = selectedAccessoryPath;
+        $(accessory).load(function() {
+          console.log("Image finished loading:", accessory.clientHeight, accessory.clientWidth);
+        });
         $( "#accessory-box" ).append(accessory);
         console.log("loop accessory height = " + accessory.clientHeight);
         console.log("loop accessory width = " + accessory.clientWidth);
